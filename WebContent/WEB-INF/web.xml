@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>weipan</display-name>
+  <filter>
+    <filter-name>CharacterEncodings</filter-name>
+    <filter-class>com.weipan.commons.fileter.CharacterEncodings</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodings</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>session</filter-name>
+    <filter-class>com.weipan.commons.fileter.session</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>session</filter-name>
+    <url-pattern>/sys/*</url-pattern>
+  </filter-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/view/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/view/500.jsp</location>
+  </error-page>
+  <welcome-file-list>
+    <welcome-file>sys/login</welcome-file>
+  </welcome-file-list>
+</web-app>
